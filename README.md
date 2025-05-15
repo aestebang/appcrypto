@@ -5,7 +5,7 @@ AppCrypto es una aplicación móvil que proporciona información actualizada sob
 ## Capturas de Pantalla
 
 <div align="center">
-  <img src="assets/screenshots/home_screen.jpg" alt="Pantalla Principal de AppCrypto" width="300"/>
+  <img src="assets/screenshots/home_screen.jpeg" alt="Pantalla Principal de AppCrypto" width="300"/>
   <p><i>Pantalla principal mostrando el listado de criptomonedas con precios actualizados</i></p>
 </div>
 
