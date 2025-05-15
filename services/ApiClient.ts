@@ -49,7 +49,14 @@ export class ApiClient {
       
       // Validar que tenemos contenido antes de intentar analizar como JSON
       if (!responseText || responseText.trim() === '') {
-        console.error('Respuesta vacía recibida de la API');
+        console.error('Respuesta vacía recibida de la API para:', url);
+        
+        // Para el endpoint de estadísticas sociales, devolver un objeto vacío en lugar de lanzar error
+        if (endpoint.includes('/coin/social_stats/')) {
+          console.warn('Endpoint de estadísticas sociales - devolviendo objeto vacío');
+          return {} as T;
+        }
+        
         throw new Error('La API devolvió una respuesta vacía');
       }
       
@@ -59,10 +66,24 @@ export class ApiClient {
       } catch (parseError: any) {
         console.error('Error al analizar respuesta JSON:', parseError);
         console.error('Respuesta recibida:', responseText.substring(0, 200) + '...');
+        
+        // Para el endpoint de estadísticas sociales, devolver un objeto vacío en lugar de lanzar error
+        if (endpoint.includes('/coin/social_stats/')) {
+          console.warn('Error de parseo en endpoint de estadísticas sociales - devolviendo objeto vacío');
+          return {} as T;
+        }
+        
         throw new SyntaxError(`Error al analizar JSON: ${parseError.message}. Respuesta recibida: ${responseText.substring(0, 100)}...`);
       }
     } catch (error) {
       console.error('API request error:', error);
+      
+      // Para el endpoint de estadísticas sociales, devolver un objeto vacío en lugar de propagar el error
+      if (endpoint.includes('/coin/social_stats/')) {
+        console.warn('Error en petición del endpoint de estadísticas sociales - devolviendo objeto vacío');
+        return {} as T;
+      }
+      
       throw error;
     }
   }

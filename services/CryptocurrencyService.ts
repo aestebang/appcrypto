@@ -135,13 +135,15 @@ export class CryptocurrencyService {
       const response = await this.apiClient.get<any>('/coin/social_stats/', { id });
       
       if (!response) {
-        throw new Error(`No se pudieron recuperar las estadísticas sociales para la criptomoneda con ID ${id}`);
+        console.warn(`No se encontraron estadísticas sociales para la criptomoneda con ID ${id}. Devolviendo objeto vacío.`);
+        return new SocialStats({});
       }
       
       return SocialStats.fromApiResponse(response);
     } catch (error) {
       console.error(`Error al obtener estadísticas sociales para la criptomoneda con ID ${id}:`, error);
-      throw new Error('Error al recuperar datos de estadísticas sociales');
+      console.warn(`Devolviendo objeto SocialStats vacío debido al error.`);
+      return new SocialStats({});
     }
   }
 }

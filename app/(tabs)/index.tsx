@@ -6,10 +6,10 @@ import CryptoListItem from '@/components/CryptoListItem';
 import FilterOptions from '@/components/FilterOptions';
 import ErrorMessage from '@/components/ErrorMessage';
 import { getThemeColors } from '@/utils/theme';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { Redirect } from 'expo-router';
 import { useCryptocurrencies } from '@/hooks/useCryptocurrencies';
 import { useFavorites } from '@/hooks/useFavorites';
+import SafeView from '../../app/components/SafeView';
 
 export default function MarketScreen() {
   const {
@@ -31,7 +31,7 @@ export default function MarketScreen() {
   const theme = getThemeColors(colorScheme);
 
   return (
-    <SafeAreaView style={[styles.container, { backgroundColor: theme.background }]} edges={["top", "left", "right"]}>
+    <SafeView style={[styles.container, { backgroundColor: theme.background }]}>
       
       <SearchBar onSearch={handleSearch} theme={theme} />
       <FilterOptions 
@@ -80,7 +80,7 @@ export default function MarketScreen() {
           contentContainerStyle={styles.listContent}
         />
       )}
-    </SafeAreaView>
+    </SafeView>
   );
 }
 

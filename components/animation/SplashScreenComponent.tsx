@@ -1,9 +1,10 @@
-import { View, Text, SafeAreaView } from 'react-native'
+import { View, Text } from 'react-native'
 import React from 'react'
 import LottieView from 'lottie-react-native'
+import SafeView from '../../app/components/SafeView'
 const SplashScreenComponent = () => {
   return (
-    <SafeAreaView>
+    <SafeView>
       <LottieView source={require('../../assets/animations/animationBitcoin.json')} 
       autoPlay 
       loop={false}
@@ -14,7 +15,7 @@ const SplashScreenComponent = () => {
         height: '100%',
       }}
       />
-    </SafeAreaView>
+    </SafeView>
   )
 }
 

@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { NavigationContainer } from '@react-navigation/native';
 import { StatusBar } from 'expo-status-bar';
 import { Redirect } from 'expo-router';
+import SafeView from './app/components/SafeView';
 
 function SplashScreen() {
   return (
-    <SafeAreaView style={styles.splashContainer}>
+    <SafeView style={styles.splashContainer}>
       <StatusBar style="light" />
       <View style={styles.logoContainer}>
         {/* Aquí puedes poner tu logo o animación */}
         <Text style={styles.splashText}>AppCrypto</Text>
         <ActivityIndicator size="large" color="#1E88E5" style={{ marginTop: 24 }} />
       </View>
-    </SafeAreaView>
+    </SafeView>
   );
 }
 

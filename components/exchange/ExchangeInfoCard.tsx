@@ -31,7 +31,7 @@ export default function ExchangeInfoCard({
       
       <TouchableOpacity 
         style={styles.websiteLink} 
-        onPress={() => onOpenWebsite(exchange.url)}
+        onPress={() => exchange.url ? onOpenWebsite(exchange.url) : null}
         disabled={!exchange.url}
       >
         <ExternalLink size={16} color={theme.primary} />
@@ -85,7 +85,7 @@ export function ExchangeMarketInfoCard({
       {exchange.twitterUrl && (
         <TouchableOpacity 
           style={styles.twitterLink} 
-          onPress={() => onOpenWebsite(exchange.twitterUrl)}
+          onPress={() => exchange.twitterUrl ? onOpenWebsite(exchange.twitterUrl) : null}
         >
           <Text style={[styles.twitterText, { color: theme.primary }]}>
             {exchange.twitterUrl.replace(/https?:\/\/(www\.)?twitter\.com\//, '@')}

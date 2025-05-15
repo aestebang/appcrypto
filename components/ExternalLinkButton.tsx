@@ -11,8 +11,13 @@ interface ExternalLinkButtonProps {
 
 export default function ExternalLinkButton({ name, nameid, theme }: ExternalLinkButtonProps) {
   const handlePress = async () => {
-    const url = `https://coinlore.com/coin/${nameid}/`;
     try {
+      if (!nameid) {
+        console.warn('No nameid provided for external link');
+        return;
+      }
+      
+      const url = `https://coinlore.com/coin/${nameid}/`;
       const supported = await Linking.canOpenURL(url);
       if (supported) {
         await Linking.openURL(url);

@@ -2,6 +2,30 @@
 
 AppCrypto es una aplicación móvil que proporciona información actualizada sobre criptomonedas, incluyendo precios, capitalización de mercado, volumen de trading, estadísticas sociales y más. La aplicación está diseñada para ayudar a los usuarios a mantenerse informados sobre el mercado de criptomonedas y tomar decisiones basadas en datos actualizados.
 
+## Capturas de Pantalla
+
+<div align="center">
+  <img src="assets/screenshots/home_screen.jpg" alt="Pantalla Principal de AppCrypto" width="300"/>
+  <p><i>Pantalla principal mostrando el listado de criptomonedas con precios actualizados</i></p>
+</div>
+
+La aplicación presenta una interfaz moderna y fácil de usar con las siguientes características:
+
+- Listado de criptomonedas ordenadas por ranking
+- Precios actualizados en tiempo real
+- Porcentajes de cambio de precios en las últimas 24 horas
+- Navegación intuitiva mediante pestañas inferiores
+- Opción para marcar criptomonedas como favoritas
+- Modo oscuro para mayor comodidad visual
+
+## Descargar APK
+
+<div align="center">
+  <a href="https://expo.dev/artifacts/eas/phCPghRtFbDCAz15F98G1Y.apk">
+    <img src="https://img.shields.io/badge/Descargar-APK-blue?style=for-the-badge&logo=android" alt="Descargar APK" />
+  </a>
+</div>
+
 ## Propósito
 
 El propósito principal de esta aplicación es proporcionar a los usuarios:
@@ -257,4 +281,4 @@ Las contribuciones son bienvenidas. Por favor, abre un issue para discutir los c
 
 ## Licencia
 
-Este proyecto está licenciado bajo [insertar licencia].
+Este proyecto está licenciado bajo MIT.
